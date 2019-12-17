@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cordova.plugin.AddAppTransportSecurity" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>AddAppTransportSecurity</name>
+    <!-- <js-module name="AddAppTransportSecurity" src="www/AddAppTransportSecurity.js">
+    <clobbers target="cordova.plugins.AddAppTransportSecurity" />
+    </js-module> -->
+    <platform name="ios">
+        <config-file target="*-Info.plist" parent="NSAppTransportSecurity" mode="merge">
+            <dict>
+                <key>NSAllowsArbitraryLoads</key>
+                <true/>
+                <key>NSAllowsArbitraryLoadsInWebContent</key>
+                <true/>
+                <key>NSAllowsArbitraryLoadsForMedia</key>
+                <true/>
+                <key>NSAllowsLocalNetworking</key>
+                <true/>
+                <key>NSExceptionDomains</key>
+                <dict>
+                    <key>kelltontech.net</key>
+                    <dict>
+                        <key>NSExceptionAllowsInsecureHTTPLoads</key>
+                        <true />
+                        <key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>
+                        <true />
+                        <key>NSIncludesSubdomains</key>
+                        <true />
+                        <key>NSThirdPartyExceptionRequiresForwardSecrecy</key>
+                        <false />
+                    </dict>
+                    <key>bestseller.com</key>
+                    <dict>
+                        <key>NSExceptionAllowsInsecureHTTPLoads</key>
+                        <true />
+                        <key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>
+                        <true />
+                        <key>NSIncludesSubdomains</key>
+                        <true />
+                        <key>NSThirdPartyExceptionRequiresForwardSecrecy</key>
+                        <false />
+                    </dict>
+                    <key>herokuapp.com</key>
+                    <dict>
+                        <key>NSExceptionAllowsInsecureHTTPLoads</key>
+                        <true />
+                        <key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>
+                        <true />
+                        <key>NSIncludesSubdomains</key>
+                        <true />
+                        <key>NSThirdPartyExceptionRequiresForwardSecrecy</key>
+                        <false />
+                    </dict>
+                </dict>
+            </dict>
+    
+        </config-file>
+    </platform>
+</plugin>
